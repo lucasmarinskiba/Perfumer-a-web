@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essence - Perfumería de Lujo</title>
+    <title>Perfumería Elegance - Categorías</title>
     <style>
-        /* Estilos CSS */
         * {
             margin: 0;
             padding: 0;
@@ -13,50 +12,43 @@
             font-family: 'Arial', sans-serif;
         }
 
-        body {
-            background-color: #f5f5f5;
-        }
-
-        .header {
-            background-color: #1a1a1a;
-            color: white;
+        .categorias {
+            background: #f5f5f5;
             padding: 1rem;
             position: sticky;
-            top: 0;
-            z-index: 100;
+            top: 60px;
+            z-index: 90;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .nav-container {
+        .cinta-categorias {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .logo {
-            font-size: 2rem;
+        .boton-categoria {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
             font-weight: bold;
-            color: #gold;
+            color: #666;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .hero {
-            height: 80vh;
-            background: url('https://ejemplo.com/hero-perfumes.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .boton-categoria:hover,
+        .boton-categoria.activo {
+            background: #c5a47e;
             color: white;
-            text-align: center;
         }
 
         .productos {
-            padding: 4rem 2rem;
+            padding: 3rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -68,124 +60,137 @@
             margin-top: 2rem;
         }
 
-        .producto-card {
+        .producto {
             background: white;
-            padding: 1rem;
             border-radius: 10px;
+            padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .producto-card:hover {
+        .producto:hover {
             transform: translateY(-5px);
         }
 
-        .producto-img {
+        .producto img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 5px;
         }
 
-        .precio {
-            color: #c5a47e;
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .btn-comprar {
+        .categoria-producto {
+            position: absolute;
             background: #c5a47e;
             color: white;
-            border: none;
-            padding: 0.5rem 2rem;
-            border-radius: 20px;
-            cursor: pointer;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0.5rem;
         }
 
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 2rem;
-            margin-top: 4rem;
+        @media (max-width: 768px) {
+            .cinta-categorias {
+                gap: 1rem;
+            }
+            
+            .boton-categoria {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">ESSENCE</div>
-            <div class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-            <div class="carrito">🛒</div>
+    <!-- Header (usar el del ejemplo anterior) -->
+    
+    <div class="categorias">
+        <nav class="cinta-categorias">
+            <button class="boton-categoria activo" data-categoria="todos">Todos</button>
+            <button class="boton-categoria" data-categoria="hombre">Hombre</button>
+            <button class="boton-categoria" data-categoria="mujer">Mujer</button>
+            <button class="boton-categoria" data-categoria="niño">Niño</button>
+            <button class="boton-categoria" data-categoria="niña">Niña</button>
+            <button class="boton-categoria" data-categoria="unisex">Unisex</button>
         </nav>
-    </header>
+    </div>
 
-    <section class="hero">
-        <div>
-            <h1>Fragancias que dejan huella</h1>
-            <p>Descubre nuestra colección exclusiva</p>
-        </div>
-    </section>
-
-    <section class="productos" id="productos">
-        <h2>Nuestros Productos Destacados</h2>
+    <section class="productos">
         <div class="grid-productos">
-            <!-- Producto 1 -->
-            <div class="producto-card">
-                <img src="perfume1.jpg" alt="Perfume Oriental" class="producto-img">
-                <h3>Oriental Nights</h3>
-                <p class="precio">$120.00</p>
-                <button class="btn-comprar">Añadir al carrito</button>
+            <!-- Producto Hombre -->
+            <div class="producto" data-categoria="hombre">
+                <div class="categoria-producto">Hombre</div>
+                <img src="perfume-hombre.jpg" alt="Perfume para hombre">
+                <h3>Essence Men</h3>
+                <p>$89.99</p>
             </div>
-            
-            <!-- Repetir estructura para más productos -->
+
+            <!-- Producto Mujer -->
+            <div class="producto" data-categoria="mujer">
+                <div class="categoria-producto">Mujer</div>
+                <img src="perfume-mujer.jpg" alt="Perfume para mujer">
+                <h3>Floral Dream</h3>
+                <p>$95.99</p>
+            </div>
+
+            <!-- Producto Niña -->
+            <div class="producto" data-categoria="niña">
+                <div class="categoria-producto">Niña</div>
+                <img src="perfume-nina.jpg" alt="Perfume para niña">
+                <h3>Sweet Princess</h3>
+                <p>$49.99</p>
+            </div>
+
+            <!-- Producto Unisex -->
+            <div class="producto" data-categoria="unisex">
+                <div class="categoria-producto">Unisex</div>
+                <img src="perfume-unisex.jpg" alt="Perfume unisex">
+                <h3>Universal Charm</h3>
+                <p>$79.99</p>
+            </div>
+
+            <!-- Agregar más productos según necesites -->
         </div>
     </section>
-
-    <section class="nosotros" id="nosotros">
-        <div class="contenido-nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>Más de 20 años creando fragancias únicas...</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-contenido">
-            <div class="info-contacto">
-                <h3>Contacto</h3>
-                <p>Email: info@essence.com</p>
-                <p>Teléfono: +52 555 123 4567</p>
-            </div>
-            <div class="redes-sociales">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-            </div>
-        </div>
-    </footer>
 
     <script>
-        // JavaScript básico para funcionalidad del carrito
-        let carrito = [];
-        
-        document.querySelectorAll('.btn-comprar').forEach(button => {
-            button.addEventListener('click', () => {
-                const producto = {
-                    nombre: button.parentElement.querySelector('h3').innerText,
-                    precio: button.parentElement.querySelector('.precio').innerText
-                };
-                carrito.push(producto);
-                actualizarCarrito();
+        // Filtrado de categorías
+        document.querySelectorAll('.boton-categoria').forEach(boton => {
+            boton.addEventListener('click', () => {
+                const categoria = boton.dataset.categoria;
+                
+                // Remover clase activa de todos los botones
+                document.querySelectorAll('.boton-categoria').forEach(btn => {
+                    btn.classList.remove('activo');
+                });
+                
+                // Añadir clase activa al botón clickeado
+                boton.classList.add('activo');
+                
+                // Filtrar productos
+                document.querySelectorAll('.producto').forEach(producto => {
+                    const productoCategoria = producto.dataset.categoria;
+                    
+                    if(categoria === 'todos' || productoCategoria === categoria) {
+                        producto.style.display = 'block';
+                    } else {
+                        producto.style.display = 'none';
+                    }
+                });
             });
         });
 
-        function actualizarCarrito() {
-            const contadorCarrito = document.querySelector('.carrito');
-            contadorCarrito.textContent = `🛒 ${carrito.length}`;
-        }
+        // Efecto hover en tarjetas
+        document.querySelectorAll('.producto').forEach(producto => {
+            producto.addEventListener('mouseover', () => {
+                producto.style.transform = 'translateY(-5px)';
+            });
+            
+            producto.addEventListener('mouseout', () => {
+                producto.style.transform = 'translateY(0)';
+            });
+        });
     </script>
 </body>
 </html>
