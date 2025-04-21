@@ -17,6 +17,15 @@
             padding: 0;
         }
 
+        .btn-comprar:hover::after {
+              content: "";
+              background: url('img/splash-perfume.png');
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              animation: splash 0.4s;
+        }
+
         /* Estilos para el header */
         .header {
             background-color: #1a1a1a;
@@ -278,6 +287,11 @@
     </header>
     
     <!-- Cinta de categorías -->
+    <div class="mapa-aromas">
+         <div class="nota-cabeza" data-aroma="cítricos"></div>
+         <div class="nota-corazon" data-aroma="floral"></div>
+         <div class="nota-base" data-aroma="ámbar"></div>
+    </div>
     <div class="categorias">
         <nav class="cinta-categorias">
             <button class="boton-categoria activo" data-categoria="todos">Todos</button>
