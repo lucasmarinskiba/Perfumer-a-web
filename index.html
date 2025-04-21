@@ -139,6 +139,15 @@
             to { opacity: 1; }
         }
 
+        @keyframes float {
+             0% { transform: translateY(0px); }
+             50% { transform: translateY(-20px); }
+             100% { transform: translateY(0px); }
+        }
+        .botella-destacada {
+                animation: float 6s ease-in-out infinite;
+        }
+
         /* Estilos para el formulario de trabajo */
         .formulario-trabajo {
             display: none;
@@ -278,6 +287,11 @@
             <button class="boton-categoria" data-categoria="niña">Niña</button>
             <button class="boton-categoria" data-categoria="unisex">Unisex</button>
         </nav>
+        <div class="kit-regalo">
+              <div class="botella" data-perfume="1"></div>
+              <div class="caja" data-estilo="clasico"></div>
+              <div class="tarjeta" data-mensaje="personalizado"></div>
+        </div>
     </div>
 
     <!-- Cinta de comunicación -->
